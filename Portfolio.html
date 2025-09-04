@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kartik's Portfolio Links</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url("images/background.jpeg") no-repeat center center fixed;
+      background-size: cover; /* full page */
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Dark overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.05); /* transparent card look */
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 900px;
+      width: 100%;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(6px); /* glass effect */
+    }
+
+    .profile, .links {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Left side (profile section) */
+    .profile {
+      text-align: left;
+      max-width: 55%;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 12px;
+      object-fit: cover;
+    }
+
+    .profile h1 {
+      font-size: 38px;
+      font-family: 'Roboto Slab', serif;
+      margin-bottom: 10px;
+    }
+
+    .profile .subtitle {
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      opacity: 0.85;
+    }
+
+    .profile p {
+      font-size: 14px;
+      line-height: 1.9; /* increased line distance */
+      opacity: 0.9;
+    }
+
+    /* Right side (links) */
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      max-width: 40%;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* push text left, icon right */
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 8px 0;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      min-width: 180px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .links a i {
+      font-size: 18px;
+    }
+
+    /* Official brand colors */
+    .github   { background: #333; }
+    .github:hover { background: #000; }
+
+    .linkedin { background: #0A66C2; }
+    .linkedin:hover { background: #004182; }
+
+    .x { background: #000000; }
+    .x:hover { background: #111111; }
+
+    .instagram {
+      background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    }
+    .instagram:hover {
+      filter: brightness(0.9);
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .links {
+        align-items: center;
+        margin-top: 20px;
+      }
+    }
+
+    /* Hidden Style Switcher */
+    .style-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      color: #333;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      display: none;
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hidden style switcher -->
+  <button class="style-switcher" onclick="switchStyle()">🎨 Change Style</button>
+
+  <div class="container">
+    <!-- Left side -->
+    <div class="profile">
+      <img src="images/profile.jpeg" alt="Profile" class="profile-img">
+      <p class="subtitle">BTECH | COMPUTER SCIENCE | RKGIT '27</p>
+      <h1>Kartik Tyagi</h1>
+      <p>
+        Web Development • Java • C++ • Python (Programming Language) <br>
+        Data Structures • JavaScript • C (Programming Language) <br>
+        Gmail : kartiktygai024@gmail.com
+      </p>
+    </div>
+
+    <!-- Right side -->
+    <div class="links">
+      <a href="https://github.com/KartikTyagi-4" target="_blank" class="github">KartikTyagi-4 <i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kartik-tyagi-34527a305/" target="_blank" class="linkedin">Kartik Tyagi <i class="fab fa-linkedin"></i></a>
+      <a href="https://x.com/yourusername" target="_blank" class="x">X <i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://instagram.com/kartiktyagi_4" target="_blank" class="instagram">kartiktyagi_4 <i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <script>
+    // Theme switcher logic
+    const themes = ["theme-dark", "theme-light"];
+    let currentTheme = 0;
+
+    function switchStyle() {
+      document.body.classList.remove(...themes);
+      currentTheme = (currentTheme + 1) % themes.length;
+      document.body.classList.add(themes[currentTheme]);
+    }
+
+    // Secret key to show style switcher (Press Shift + S)
+    document.addEventListener("keydown", function(event) {
+      if (event.shiftKey && event.key.toLowerCase() === "s") {
+        document.querySelector(".style-switcher").style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+  
